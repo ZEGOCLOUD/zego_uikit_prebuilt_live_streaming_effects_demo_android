@@ -59,13 +59,8 @@ public class LiveActivity extends AppCompatActivity {
     private void beautyEffectsConfig(ZegoUIKitPrebuiltLiveStreamingConfig config) {
         // need BeautyResources folder in assets to work
 
-        config.bottomMenuBarConfig = new ZegoBottomMenuBarConfig(
-            Arrays.asList(ZegoMenuBarButtonName.TOGGLE_CAMERA_BUTTON, ZegoMenuBarButtonName.TOGGLE_MICROPHONE_BUTTON,
-                ZegoMenuBarButtonName.SWITCH_CAMERA_FACING_BUTTON, ZegoMenuBarButtonName.BEAUTY_BUTTON),
-            Arrays.asList(ZegoMenuBarButtonName.TOGGLE_CAMERA_BUTTON, ZegoMenuBarButtonName.TOGGLE_MICROPHONE_BUTTON,
-                ZegoMenuBarButtonName.SWITCH_CAMERA_FACING_BUTTON, ZegoMenuBarButtonName.COHOST_CONTROL_BUTTON,
-                ZegoMenuBarButtonName.BEAUTY_BUTTON),
-            Collections.singletonList(ZegoMenuBarButtonName.COHOST_CONTROL_BUTTON));
+        config.bottomMenuBarConfig.hostButtons.add(ZegoMenuBarButtonName.BEAUTY_BUTTON);
+        config.bottomMenuBarConfig.coHostButtons.add(ZegoMenuBarButtonName.BEAUTY_BUTTON);
 
         List<ZegoBeautyPluginEffectsType> customTypes = new ArrayList<>();
         customTypes.addAll(ZegoBeautyPluginConfig.basicTypes());
